@@ -43,14 +43,14 @@ function createBoard() {
         // Add piece color based on position
         if (i <= 15) {
             // if (square.firstChild) {
-                square.firstChild.firstChild.classList.add('black');
-                // console.log( square.firstChild.classList, startPieces[i]);
+            square.firstChild.firstChild.classList.add('black');
+            // console.log( square.firstChild.classList, startPieces[i]);
             // }
         }
         if (i >= 48) {
             // if (square.firstChild) {
-                square.firstChild.firstChild.classList.add('white');
-                // console.log( square.firstChild.classList, startPieces[i]);
+            square.firstChild.firstChild.classList.add('white');
+            // console.log( square.firstChild.classList, startPieces[i]);
             // }
         }
 
@@ -113,7 +113,7 @@ function dragDrop(e) {
             e.target.append(draggedElement)
             checkForWin()
             changePlayer()
-            
+
             return
         }
     }
@@ -135,13 +135,13 @@ function checkIfValid(target) {
         case 'pawn':
             const starterRow = [8, 9, 10, 11, 12, 13, 14, 15]
             if (
-                starterRow.includes(startId) && startId + width * 2 === targetId  && !document.querySelector(`[square-id="${startId + width}"]`).firstChild ||
-               
-                startId + width === targetId  ||
+                starterRow.includes(startId) && startId + width * 2 === targetId ||
 
-                 startId - 1 === targetId && document.querySelector(`[square-id="${startId + width - 1}"]`).firstChild || 
+                startId + width === targetId ||
 
-                 startId - 1 === targetId && document.querySelector(`[square-id="${startId + width + 1}"]`).firstChild
+                startId - 1 === targetId && document.querySelector(`[square-id="${startId + width - 1}"]`).firstChild ||
+
+                startId - 1 === targetId && document.querySelector(`[square-id="${startId + width + 1}"]`).firstChild
             ) {
                 return true;
             }
@@ -455,16 +455,16 @@ function revertIds() {
     allSquares.forEach((square, i) => square.setAttribute('square-id', i));
 }
 
-function checkForWin(){
+function checkForWin() {
     const kings = Array.from(document.querySelectorAll('#king'));
     console.log(kings);
-    if(!kings.some(king =>king.firstChild.classList.contains('white'))){
-        infoDisplay.innerHTML="Black Player Wins!!"
+    if (!kings.some(king => king.firstChild.classList.contains('white'))) {
+        infoDisplay.innerHTML = "Black Player Wins!!"
         const allSquares = document.querySelectorAll('.square')
         allSquares.forEach(square => square.firstChild?.setAttribute('draggable', false))
     }
-    if(!kings.some(king =>king.firstChild.classList.contains('black'))){
-        infoDisplay.innerHTML="White Player Wins!!"
+    if (!kings.some(king => king.firstChild.classList.contains('black'))) {
+        infoDisplay.innerHTML = "White Player Wins!!"
         const allSquares = document.querySelectorAll('.square')
         allSquares.forEach(square => square.firstChild?.setAttribute('draggable', false))
     }
