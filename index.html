@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chess Elite</title>
     <link rel="stylesheet" href="styles.css">
-
+    <link rel="icon" href="chess.png" type="img/fav-icon" />
 </head>
+
 <body>
-    <div id="gameboard"></div>
-    <p>It is <span id="player"></span> go!</p>
-    <div id="info-display"></div>
-    <script src="pieces.js"></script>
-    <script src="app.js"></script>
+    <div class="bd">
+        <div class="hd">
+            <div class="wt">
+                <h1>Welcome to CHESS ELITE</h1>
+                <h2>Let get a short Walkthrough!</h3>
+                    <p>Drag and Drop a piece to move it.</p>
+                    <br>
+                    <h2>Let the best move win!</h2>
+                    
+            </div>
+            <img src="cb.png" alt="chess board" />
+           
+        </div>
+        <div class="tot" align="center">
+            <h1>Let's Onboard the Match</h1>
+            <div id="gameboard"></div>
+            <h2>It is <span id="player"></span>'s turn!</h2>
+            <div id="info-display" style="color: rgb(204,167,138);;"></div>
+            <script src="pieces.js"></script>
+            <script src="app.js"></script>
+        </div>
+        <div class="foot" align="center" style="padding-bottom: 1em;">
+            <p> © Developed by: <a>Ankita Panda ||
+            <a href="https://github.com/ankita-104/Chess-Elite" style="text-decoration: none;">Repository Link</a></p>
+        </div>
+    </div>
+
+   
 </body>
+
 </html>
