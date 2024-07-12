@@ -138,7 +138,7 @@ function checkIfValid(target) {
                 starterRow.includes(startId) 
                 && startId + width * 2 === targetId ||
 
-                startId + width === targetId  && !document.querySelector(`[square-id="${startId + width}"]`).firstChild||
+                startId + width === targetId  ||
 
                 startId +width- 1 === targetId && document.querySelector(`[square-id="${startId + width - 1}"]`).firstChild ||
 
